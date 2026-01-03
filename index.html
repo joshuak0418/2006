@@ -84,14 +84,14 @@
       position: absolute;
       bottom: -4px;
       left: 0;
-      width: 0;
+      width: 100%;
       height: 1px;
       background: var(--terracotta);
-      transition: width 0.3s;
+      transition: background 0.3s;
     }
     
     .nav-links a:hover::after {
-      width: 100%;
+      background: var(--sand);
     }
     
     @media (max-width: 768px) {

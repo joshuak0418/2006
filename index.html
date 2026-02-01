@@ -92,10 +92,13 @@
       height: 1px;
       background: var(--terracotta);
       transition: background 0.3s;
+      transform: scaleX(0);
+      transform-origin: right;
     }
     
     .nav-links a:hover::after {
-      background: var(--sand);
+      transform: scaleX(1);
+      transform-origin: left;
     }
     
     @media (max-width: 768px) {
@@ -255,59 +258,6 @@
       background: var(--warm-white);
     }
     
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      margin-bottom: 64px;
-    }
-    
-    @media (max-width: 900px) {
-      .leadership-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (max-width: 500px) {
-      .leadership-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .pastor-card {
-      text-align: center;
-    }
-    
-    .pastor-avatar {
-      width: 100px;
-      height: 100px;
-      background: var(--sand);
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-    }
-    
-    .pastor-name {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    
-    .pastor-role {
-      font-size: 13px;
-      color: var(--warm-gray);
-      margin-bottom: 8px;
-    }
-    
-    .pastor-area {
-      font-size: 12px;
-      color: var(--terracotta);
-    }
-    
     .committee-section {
       border-top: 1px solid var(--sand);
       padding-top: 48px;
@@ -342,16 +292,11 @@
       word-break: keep-all;
     }
     
-    .pastor-list p:last-child {
-      margin-bottom: 0;
-    }
-    
     .pastor-list .pastor-name {
       font-family: 'Noto Sans KR', sans-serif;
       font-size: 15px;
       font-weight: 700;
       color: var(--charcoal);
-      word-break: keep-all;
     }
     
     .pastor-list .pastor-role {
@@ -372,54 +317,8 @@
       color: var(--warm-white);
     }
     
-    .members .section-eyebrow {
-      color: var(--terracotta);
-    }
-    
     .members .section-title {
       color: var(--warm-white);
-    }
-    
-    .members .section-desc {
-      color: var(--light-gray);
-    }
-    
-    .members-simple {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      margin-bottom: 48px;
-    }
-    
-    @media (max-width: 500px) {
-      .members-simple {
-        gap: 40px;
-      }
-    }
-    
-    .member-stat {
-      text-align: center;
-    }
-    
-    .stat-label {
-      display: block;
-      font-size: 16px;
-      color: var(--light-gray);
-      margin-bottom: 8px;
-    }
-    
-    .stat-number {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 56px;
-      font-weight: 700;
-      color: var(--warm-white);
-    }
-    
-    .stat-unit {
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--light-gray);
-      margin-left: 4px;
     }
     
     .members-grid {
@@ -445,34 +344,20 @@
       margin-bottom: 8px;
     }
     
-    .members-card .count {
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--terracotta);
-      margin-bottom: 20px;
-    }
-    
-    .members-card .count-small {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--terracotta);
-      margin-top: 16px;
-      text-align: center;
-    }
-    
     .members-card .list {
       font-size: 14px;
       color: var(--warm-white);
       line-height: 2.2;
-      font-weight: 500;
+      font-weight: 400;
       word-break: keep-all;
+      opacity: 0.9;
     }
     
-    .total-display {
-      text-align: center;
-      padding: 48px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
+    .members-card .count-small {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin-top: 16px;
     }
     
     .nextgen-list {
@@ -487,24 +372,24 @@
       font-family: 'Noto Sans KR', sans-serif;
       font-size: 18px;
       font-weight: 700;
-      color: var(--warm-white);
       margin-bottom: 16px;
     }
     
     .nextgen-list .list {
       font-size: 14px;
-      color: var(--warm-white);
-      font-weight: 500;
-      line-height: 2;
-      word-break: keep-all;
+      margin-bottom: 8px;
     }
     
     .nextgen-list .count-small {
-      font-size: 14px;
-      font-weight: 500;
       color: var(--terracotta);
-      margin-top: 16px;
+      font-weight: 600;
+    }
+    
+    .total-display {
       text-align: center;
+      padding: 48px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
     }
     
     .total-label {
@@ -515,7 +400,7 @@
     
     .total-number {
       font-family: 'Noto Sans KR', sans-serif;
-      font-size: 80px;
+      font-size: 64px;
       font-weight: 700;
       color: var(--terracotta);
     }
@@ -523,30 +408,25 @@
     .total-unit {
       font-size: 24px;
       font-weight: 400;
-      color: var(--terracotta);
     }
     
     /* Community Section */
-    .community {
-      background: var(--cream);
-    }
-    
     .community-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
     
     .community-card {
       background: var(--warm-white);
       padding: 32px;
-      border-radius: 4px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      transition: transform 0.3s;
     }
     
     .community-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      transform: translateY(-8px);
     }
     
     .community-header {
@@ -571,21 +451,18 @@
       color: var(--olive);
       margin-bottom: 12px;
       font-weight: 500;
-      word-break: keep-all;
     }
     
     .community-members {
       font-size: 14px;
       color: var(--charcoal);
-      line-height: 1.9;
-      font-weight: 500;
-      word-break: keep-all;
+      opacity: 0.8;
     }
     
-    /* Next Gen */
+    /* Next Gen Section */
     .nextgen-section {
-      margin-top: 64px;
-      padding-top: 64px;
+      margin-top: 80px;
+      padding-top: 80px;
       border-top: 1px solid var(--sand);
     }
     
@@ -593,74 +470,33 @@
       font-family: 'Noto Sans KR', sans-serif;
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 32px;
-      color: var(--charcoal);
+      margin-bottom: 40px;
     }
     
     .nextgen-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
-    }
-    
-    @media (max-width: 768px) {
-      .nextgen-grid {
-        grid-template-columns: 1fr;
-      }
     }
     
     .nextgen-card {
       background: var(--olive);
       color: var(--warm-white);
-      padding: 32px;
-      border-radius: 4px;
+      padding: 40px 32px;
+      border-radius: 12px;
       text-align: center;
     }
     
-    .nextgen-card .emoji {
-      font-size: 40px;
-      margin-bottom: 16px;
-    }
-    
-    .nextgen-card .name {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--warm-white);
-    }
-    
-    .nextgen-card .age {
-      font-size: 13px;
-      color: var(--warm-white);
-      margin-bottom: 16px;
-    }
-    
-    .nextgen-card .members {
-      font-size: 14px;
-      color: var(--warm-white);
-      line-height: 1.8;
-      background: transparent;
-      font-weight: 500;
-      word-break: keep-all;
-    }
+    .nextgen-card .emoji { font-size: 40px; margin-bottom: 16px; }
+    .nextgen-card .name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .nextgen-card .age { font-size: 13px; opacity: 0.8; margin-bottom: 20px; display: block; }
     
     /* Ministry Section */
-    .ministry {
-      background: var(--warm-white);
-    }
-    
-    .ministry-category {
-      margin-bottom: 56px;
-    }
-    
-    .ministry-category:last-child {
-      margin-bottom: 0;
-    }
-    
+    .ministry { background: var(--warm-white); }
+    .ministry-category { margin-bottom: 64px; }
     .ministry-category-title {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--olive);
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -672,89 +508,46 @@
     .ministry-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 24px;
     }
     
     .ministry-card {
       background: var(--cream);
-      padding: 28px;
-      border-radius: 4px;
+      padding: 32px;
+      border-radius: 8px;
     }
     
-    .ministry-name {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--charcoal);
-    }
-    
-    .ministry-leader {
-      font-size: 13px;
-      color: var(--olive);
-      margin-bottom: 12px;
-      font-weight: 500;
-      word-break: keep-all;
-    }
-    
-    .ministry-desc {
-      font-size: 14px;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-    
-    .ministry-members {
-      font-size: 13px;
-      color: var(--charcoal);
-      font-weight: 500;
-      margin-top: 12px;
-      word-break: keep-all;
-    }
+    .ministry-name { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+    .ministry-leader { font-size: 13px; color: var(--olive); font-weight: 600; margin-bottom: 12px; }
+    .ministry-desc { font-size: 14px; color: var(--warm-gray); margin-bottom: 16px; }
+    .ministry-members { font-size: 13px; font-weight: 500; }
     
     /* Calendar Section */
-    .calendar {
-      background: var(--cream);
-    }
-    
-    .calendar-semester {
-      margin-bottom: 64px;
-    }
-    
+    .calendar-semester { margin-bottom: 80px; }
     .semester-label {
       display: inline-block;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--warm-white);
       background: var(--olive);
       padding: 8px 20px;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
+      border-radius: 4px;
       margin-bottom: 32px;
     }
     
     .calendar-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 16px;
-    }
-    
-    @media (max-width: 1100px) {
-      .calendar-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    @media (max-width: 600px) {
-      .calendar-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
     
     .month-card {
       background: var(--warm-white);
       padding: 24px;
-      border-radius: 4px;
-      min-height: 200px;
+      border-radius: 8px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
     }
     
     .month-card.highlight {
@@ -762,55 +555,19 @@
       color: var(--warm-white);
     }
     
-    .month-name {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    
-    .event-list {
-      list-style: none;
-    }
-    
+    .month-name { font-weight: 700; font-size: 18px; margin-bottom: 16px; }
+    .event-list { list-style: none; flex-grow: 1; }
     .event-list li {
       font-size: 13px;
-      font-weight: 500;
-      color: var(--warm-gray);
       padding: 8px 0;
       border-bottom: 1px solid var(--sand);
-      line-height: 1.5;
+      line-height: 1.4;
     }
     
-    .event-list li:last-child {
-      border-bottom: none;
-    }
-    
-    .month-card.highlight .event-list li {
-      color: rgba(255,255,255,0.9);
-      border-color: rgba(255,255,255,0.2);
-    }
-    
-    .event-date {
-      display: block;
-      font-size: 11px;
-      color: var(--light-gray);
-      margin-top: 2px;
-    }
-    
-    .month-card.highlight .event-date {
-      color: rgba(255,255,255,0.7);
-    }
-    
-    .event-main {
-      font-weight: 500;
-      color: var(--terracotta);
-    }
-    
-    .month-card.highlight .event-main {
-      color: #fff4c4;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    }
+    .month-card.highlight .event-list li { border-color: rgba(255,255,255,0.2); }
+    .event-date { display: block; font-size: 11px; opacity: 0.7; margin-top: 4px; }
+    .event-main { font-weight: 700; color: var(--terracotta); }
+    .month-card.highlight .event-main { color: #fff; }
     
     /* Footer */
     .footer {
@@ -819,61 +576,25 @@
       padding: 120px 80px;
     }
     
-    @media (max-width: 768px) {
-      .footer {
-        padding: 80px 24px;
-      }
-    }
-    
-    .footer-content {
-      max-width: 600px;
-    }
-    
-    .footer-title {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 24px;
-    }
-    
-    .footer-verse {
-      font-size: 16px;
-      color: var(--light-gray);
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-    
-    .footer-ref {
-      font-size: 14px;
-      color: var(--terracotta);
-    }
-    
+    .footer-title { font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 24px; line-height: 1.2; }
+    .footer-verse { font-style: italic; opacity: 0.7; margin-bottom: 8px; }
+    .footer-ref { color: var(--terracotta); font-weight: 600; }
     .footer-bottom {
-      margin-top: 64px;
-      padding-top: 32px;
+      margin-top: 80px;
+      padding-top: 40px;
       border-top: 1px solid rgba(255,255,255,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
     }
     
-    .footer-church {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-    }
-    
-    .footer-year {
-      font-size: 13px;
-      color: var(--light-gray);
+    @media (max-width: 768px) {
+      .footer { padding: 80px 24px; }
+      .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">더드림교회</a>
     <ul class="nav-links">
@@ -884,8 +605,7 @@
       <li><a href="#calendar">일정</a></li>
     </ul>
   </nav>
-  
-  <!-- Hero -->
+
   <section class="hero">
     <div class="hero-content">
       <p class="hero-eyebrow">2026 사역 나눔</p>
@@ -901,8 +621,7 @@
       </div>
     </div>
   </section>
-  
-  <!-- Leadership Section -->
+
   <section class="section leadership" id="leadership">
     <div class="section-header">
       <p class="section-eyebrow">Leadership</p>
@@ -917,7 +636,7 @@
           <p><span class="pastor-name">김진철 목사</span> <span class="pastor-role">담임</span> <span class="pastor-area">전체 사역</span></p>
           <p><span class="pastor-name">김진희 전도사</span> <span class="pastor-role">전도사</span> <span class="pastor-area">양육</span></p>
           <p><span class="pastor-name">서영범 교육전도사</span> <span class="pastor-role">교육전도사</span> <span class="pastor-area">여호수아, 마루</span></p>
-          <p><span class="pastor-name"><span class="nowrap">최　봄</span> 교육전도사</span> <span class="pastor-role">교육전도사</span> <span class="pastor-area">토리누리</span></p>
+          <p><span class="pastor-name">최　봄 교육전도사</span> <span class="pastor-role">교육전도사</span> <span class="pastor-area">토리누리</span></p>
         </div>
       </div>
       <div class="committee-item">
@@ -938,8 +657,7 @@
       </div>
     </div>
   </section>
-  
-  <!-- Members Section -->
+
   <section class="section members" id="members">
     <div class="section-header">
       <p class="section-eyebrow">Members</p>
@@ -949,36 +667,33 @@
     <div class="members-grid">
       <div class="members-card">
         <h3><span>👨</span> 형제</h3>
-        <p class="list">고봉훈 · 고설중 · 고준영 · 고춘수 · 김병진 · 김승기 · 김영건 · 김영삼 · 김영윤 · 김승건 · 김재호 · 김진철 · 두철호 · 박영순 · 박창병 · 박현태 · 배상묵 · 서영범 · 송인섭 · 송재환 · 안재우 · 어랑경 · 오준서 · 오현문 · 이성우 · 이원준 · 이재욱 · 이재형 · 이준희 · 임용빈 · 최상호 · 최원훈 · 최윤호 · 최재현 · 표수민 · 하진근 · 홍기범</p>
-        <p class="count-small">37명</p>
+        <p class="list">고봉훈 · 고설중 · 고준영 · 고춘수 · 김병진 · 김승기 · 김영건 · 김영삼 · 김영윤 · 김승건 · 김재호 · 김진철 · 두철호 · 박영순 · 박창병 · 박현태 · 배상묵 · 서영범 · 송인섭 · 송재환 · 안재우 · 어랑경 · 오세원 · 오준서 · 오현문 · 이성우 · 이원준 · 이재욱 · 이재형 · 이준희 · 임용빈 · 최상호 · 최원훈 · 최윤호 · 최재현 · 표수민 · 하진근 · 홍기범</p>
+        <p class="count-small">38명</p>
       </div>
-      
       <div class="members-card">
         <h3><span>👩</span> 자매</h3>
-        <p class="list">고소영 · 고은영 · 김보옥 · <span class="nowrap">김　솔</span> · 김인선 · 김인숙 · 김인정 · 김진희 · 김희영 · 노혜리 · 민서영 · 민지연 · 박규나 · 배정은 · 배주헌 · 사경아 · 박수민 · 박순영 · 손미선 · 송은주 · 신선영 · 안명주 · 연정옥 · 유해인 · 윤혜진 · 이서현 · 이소민 · 이선주 · 이옥선 · 이정숙 · 전미나 · 전한나 · 정다워 · 정용자 · 정희숙 · 최성윤 · 최효순 · 표수빈 · 표수지 · 한영화 · 황혜진</p>
+        <p class="list">고소영 · 고은영 · 김보옥 · 김　솔 · 김인선 · 김인숙 · 김인정 · 김진희 · 김희영 · 노혜리 · 민서영 · 민지연 · 박규나 · 배정은 · 배주헌 · 사경아 · 박수민 · 박수정 · 박순영 · 손미선 · 송은주 · 신선영 · 안명주 · 연정옥 · 유해인 · 윤혜진 · 이서현 · 이소민 · 이선주 · 이옥선 · 이정숙 · 전미나 · 전한나 · 정다워 · 정용자 · 정희숙 · 최성윤 · 최효순 · 표수빈 · 표수지 · 한영화 · 황혜진</p>
         <p class="count-small">41명</p>
       </div>
     </div>
     
     <div class="nextgen-list">
       <h3>🌱 다음세대</h3>
-      <p class="list">김새아 · 이예린 · 임라엘 · 임라온 · 최시온 · <span class="nowrap">최　영</span> · 최이레 · 하은우 · 황의진</p>
+      <p class="list">김새아 · 이예린 · 임라엘 · 임라온 · 최시온 · 최　영 · 최이레 · 하은우 · 황의진</p>
       <p class="list">두예은 · 두준수 · 오다엘 · 오아람 · 홍민재</p>
       <p class="count-small">14명</p>
     </div>
     
     <div class="total-display">
       <p class="total-label">총 가족</p>
-      <p class="total-number">92<span class="total-unit">명</span></p>
+      <p class="total-number">93<span class="total-unit">명</span></p>
     </div>
   </section>
-  
-  <!-- Community Section -->
+
   <section class="section community" id="community">
     <div class="section-header">
       <p class="section-eyebrow">Community</p>
       <h2 class="section-title">더드림 공동체</h2>
-      <p class="section-desc">7개 가정교회와 다음 세대 공동체가 함께 합니다.</p>
     </div>
     
     <div class="community-grid">
@@ -990,7 +705,6 @@
         <p class="community-builder">빌더: 오현문, 김인정</p>
         <p class="community-members">고설중 · 김인선 · 신선영 · 어랑경 · 이옥선 · 최성윤</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">👶</span>
@@ -999,7 +713,6 @@
         <p class="community-builder">빌더: 이준희, 이서현</p>
         <p class="community-members">민서영 · 배정은 · 임용빈 · 전미나 · 최상호 · 하진근</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">🏔️</span>
@@ -1008,7 +721,6 @@
         <p class="community-builder">빌더: 김영윤, 박규나</p>
         <p class="community-members">김병진 · 손미선 · 이선주 · 이정숙 · 민지연 · 정희숙 · 표수지</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">🏠</span>
@@ -1017,7 +729,6 @@
         <p class="community-builder">빌더: 김진철, 김진희</p>
         <p class="community-members">김보옥 · 두철호 · 박영순 · 연정옥 · 표수빈 · 황혜진</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">🫠</span>
@@ -1026,48 +737,43 @@
         <p class="community-builder">빌더: 배상묵, 전한나</p>
         <p class="community-members">김승건 · 김희영 · 사경아 · 안명주 · 윤혜진 · 이재형 · 최원훈 · 홍기범</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">👣</span>
           <span class="community-name">그따무</span>
         </div>
         <p class="community-builder">빌더: 최재현, 노혜리</p>
-        <p class="community-members">고소영 · 고은영 · 고준영 · 김승기 · 배주헌 · 서영범 · 이성우 · <span class="nowrap">최　봄</span></p>
+        <p class="community-members">고소영 · 고은영 · 고준영 · 김승기 · 배주헌 · 서영범 · 이성우 · 최　봄</p>
       </div>
-      
       <div class="community-card">
         <div class="community-header">
           <span class="community-emoji">🦁</span>
           <span class="community-name">여호수아</span>
         </div>
         <p class="community-builder">빌더: 서영범, 고은영</p>
-        <p class="community-members">고소영 · 고은영 · 고준영 · 김승기 · 김영건 · 김재호 · <span class="nowrap">김　솔</span> · 박수민 · 박수정 · 박현태 · 배주헌 · 서영범 · 송은주 · 송재환 · 안재우 · 오준서 · 유해인 · 이성우 · 이소민 · 이원준 · 이재욱 · 정다워 · <span class="nowrap">최　봄</span> · 표수민</p>
+        <p class="community-members">고소영 · 고은영 · 고준영 · 김승기 · 김영건 · 김재호 · 김　솔 · 박수민 · 박수정 · 박현태 · 배주헌 · 서영범 · 송은주 · 송재환 · 안재우 · 오준서 · 유해인 · 이성우 · 이소민 · 이원준 · 이재욱 · 정다워 · 최　봄 · 표수민</p>
       </div>
     </div>
-    
-    <!-- Next Gen -->
+
     <div class="nextgen-section">
       <h3 class="nextgen-title">다음 세대 공동체</h3>
       <div class="nextgen-grid">
         <div class="nextgen-card">
           <p class="emoji">🐥</p>
           <p class="name">토리누리</p>
-          <p class="age">취학 전 · 초등</p>
-          <p class="members">김새아 · 이예린 · 임라엘 · 임라온 · 최시온 · <span class="nowrap">최　영</span> · 최이레 · 하은우 · 황의진</p>
+          <span class="age">취학 전 · 초등</span>
+          <p class="members">김새아 · 이예린 · 임라엘 · 임라온 · 최시온 · 최　영 · 최이레 · 하은우 · 황의진</p>
         </div>
-        
         <div class="nextgen-card">
           <p class="emoji">🌿</p>
           <p class="name">마루</p>
-          <p class="age">청소년</p>
+          <span class="age">청소년</span>
           <p class="members">두예은 · 두준수 · 오다엘 · 오아람 · 홍민재</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Ministry Section -->
+
   <section class="section ministry" id="ministry">
     <div class="section-header">
       <p class="section-eyebrow">Ministry Teams</p>
@@ -1086,98 +792,23 @@
           <p class="ministry-name">예배팀</p>
           <p class="ministry-desc">예배 찬양 인도 및 음악 사역 전반</p>
           <p class="ministry-leader">섬김이: 오현문</p>
-          <p class="ministry-members">건반: 정희숙, 표수지 | 베이스: 어랑경 | 드럼: 고준영<br>싱어: 김병진 · 김인선 · 김인정 · 전미나 · 전한나</p>
-        </div>
-        <div class="ministry-card">
-          <p class="ministry-name">새가족 지원팀</p>
-          <p class="ministry-desc">새가족 정착 지원, 돌봄, 풍삶초 일대일 연결</p>
+          <p class="ministry-members">건반: 정희숙, 표수지 | 베이스: 어랑경 | 드럼: 고준영</p>
         </div>
         <div class="ministry-card">
           <p class="ministry-name">미디어 사역팀</p>
           <p class="ministry-desc">음향, 카메라, 방송화면, 온라인 예배 송출</p>
           <p class="ministry-leader">섬김이: 어랑경</p>
-          <p class="ministry-members">홍기범 · 김승기 · 표수민</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="ministry-category">
-      <h3 class="ministry-category-title">섬김 사역</h3>
-      <div class="ministry-grid">
-        <div class="ministry-card">
-          <p class="ministry-name">섬김사역팀</p>
-          <p class="ministry-desc">교회 내·외 섬김 사역, 애찬 및 성찬 친교 사역</p>
-          <p class="ministry-leader">섬김이: 김영윤</p>
-          <p class="ministry-members">박규나 · 배정은</p>
-        </div>
-        <div class="ministry-card">
-          <p class="ministry-name">중보기도팀</p>
-          <p class="ministry-desc">교회와 성도들을 위한 중보기도, 영성훈련 사역</p>
-          <p class="ministry-leader">섬김이: 이선주</p>
-          <p class="ministry-members">김보옥 · 이정숙 · 전한나 · 황혜진</p>
-        </div>
-        <div class="ministry-card">
-          <p class="ministry-name">만나사역팀</p>
-          <p class="ministry-leader">섬김이: 김보옥</p>
-          <p class="ministry-members">이선주 · 이준희 · 임용빈 · 손미선</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="ministry-category">
-      <h3 class="ministry-category-title">전도 · 선교 사역</h3>
-      <div class="ministry-grid">
-        <div class="ministry-card">
-          <p class="ministry-name">전도사역팀</p>
-          <p class="ministry-desc">지역 전도 사역</p>
-          <p class="ministry-leader">섬김이: 고설중</p>
-        </div>
-        <div class="ministry-card">
-          <p class="ministry-name">선교사역팀</p>
-          <p class="ministry-desc">국내외 선교지 연락 및 소식, 아웃리치 지원</p>
-          <p class="ministry-leader">섬김이: 배상묵</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="ministry-category">
-      <h3 class="ministry-category-title">관재 사역</h3>
-      <div class="ministry-grid">
-        <div class="ministry-card">
-          <p class="ministry-name">재정팀</p>
-          <p class="ministry-desc">헌금 관리 및 재정 집행</p>
-          <p class="ministry-leader">섬김이: 배상묵</p>
-          <p class="ministry-members">박규나 · 김승건</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="ministry-category">
-      <h3 class="ministry-category-title">다음 세대 사역</h3>
-      <div class="ministry-grid">
-        <div class="ministry-card">
-          <p class="ministry-name">토리누리</p>
-          <p class="ministry-desc">취학 전 · 초등 자녀</p>
-          <p class="ministry-leader">섬김이: 이옥선</p>
-          <p class="ministry-members">고은영 · 고소영 · 이성우 · 이옥선 · 표수민</p>
-        </div>
-        <div class="ministry-card">
-          <p class="ministry-name">마루</p>
-          <p class="ministry-desc">청소년 자녀</p>
-          <p class="ministry-leader">섬김이: 서영범</p>
-          <p class="ministry-members">김인선 · 정다워 · 최상호</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Calendar Section -->
+
   <section class="section calendar" id="calendar">
     <div class="section-header">
       <p class="section-eyebrow">Calendar</p>
       <h2 class="section-title">2026년 주요 일정</h2>
     </div>
-    
+
     <div class="calendar-semester">
       <span class="semester-label">상반기 1~6월</span>
       <div class="calendar-grid">
@@ -1193,7 +824,6 @@
           <ul class="event-list">
             <li>헌신가족 수련회 <span class="event-date">2/28-3/1</span></li>
             <li>토리누리 겨울캠프</li>
-            <li>마루 겨울캠프</li>
           </ul>
         </div>
         <div class="month-card">
@@ -1207,7 +837,6 @@
           <ul class="event-list">
             <li>고난주간 특별기도회 <span class="event-date">14-18일</span></li>
             <li><span class="event-main">부활절</span> <span class="event-date">20일</span></li>
-            <li>온가족 수련회 <span class="event-date">25-26일</span></li>
           </ul>
         </div>
         <div class="month-card">
@@ -1215,7 +844,6 @@
           <ul class="event-list">
             <li>어린이주일 <span class="event-date">3일</span></li>
             <li>어버이주일 <span class="event-date">10일</span></li>
-            <li>다음세대선교사 주일 <span class="event-date">17일</span></li>
           </ul>
         </div>
         <div class="month-card highlight">
@@ -1226,59 +854,8 @@
         </div>
       </div>
     </div>
-    
-    <div class="calendar-semester">
-      <span class="semester-label">하반기 7~12월</span>
-      <div class="calendar-grid">
-        <div class="month-card">
-          <p class="month-name">7월</p>
-          <ul class="event-list">
-            <li>아웃리치 (청년/라오스)</li>
-          </ul>
-        </div>
-        <div class="month-card highlight">
-          <p class="month-name">8월</p>
-          <ul class="event-list">
-            <li>토리누리 여름캠프</li>
-            <li>마루 여름캠프</li>
-          </ul>
-        </div>
-        <div class="month-card">
-          <p class="month-name">9월</p>
-          <ul class="event-list">
-            <li>BEE 로마서</li>
-            <li>친교탁구대회 <span class="event-date">13일</span></li>
-            <li>특별저녁 기도회 <span class="event-date">21-25일</span></li>
-          </ul>
-        </div>
-        <div class="month-card highlight">
-          <p class="month-name">10월</p>
-          <ul class="event-list">
-            <li>헌신가족 비전수련회 <span class="event-date">24일</span></li>
-          </ul>
-        </div>
-        <div class="month-card">
-          <p class="month-name">11월</p>
-          <ul class="event-list">
-            <li><span class="event-main">추수감사절</span> <span class="event-date">1일</span></li>
-            <li>감사나눔행사 <span class="event-date">1일</span></li>
-            <li>성경암송축제 <span class="event-date">1일</span></li>
-          </ul>
-        </div>
-        <div class="month-card highlight">
-          <p class="month-name">12월</p>
-          <ul class="event-list">
-            <li>예결산 공동의회 <span class="event-date">21일</span></li>
-            <li>히스테이블 <span class="event-date">25일</span></li>
-            <li><span class="event-main">성탄절</span> <span class="event-date">25일</span></li>
-            <li>송구영신예배 <span class="event-date">31일</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </section>
-  
-  <!-- Footer -->
+
   <footer class="footer">
     <div class="footer-content">
       <h2 class="footer-title">하나님의 일하심에<br>함께 동참합시다</h2>
@@ -1290,9 +867,8 @@
       <p class="footer-year">© 2026</p>
     </div>
   </footer>
-  
+
   <script>
-    // Navigation scroll effect
     window.addEventListener('scroll', function() {
       const nav = document.getElementById('nav');
       if (window.scrollY > 50) {
